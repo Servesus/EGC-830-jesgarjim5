@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import django_heroku
-	ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
-	BASEURL = 'https://septiembre-primera-prueba.herokuapp.com' (la url de la aplicacion)
-	(todas serian igual que BASEURL EN APIS)
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+BASEURL = 'https://septiembre-primera-prueba.herokuapp.com'
 	APIS = {
     		'authentication': 'https://septiembre-primera-prueba.herokuapp.com', 
     		'base': 'https://septiembre-primera-prueba.herokuapp.com',
@@ -26,7 +25,7 @@ import django_heroku
     		'visualizer': 'https://septiembre-primera-prueba.herokuapp.com',
     		'voting': 'https://septiembre-primera-prueba.herokuapp.com',
 		}
-	django_heroku.settings(locals())
+django_heroku.settings(locals())
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -83,7 +82,6 @@ MODULES = [
     'voting',
 ]
 
-BASEURL = 'http://localhost:8000'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
