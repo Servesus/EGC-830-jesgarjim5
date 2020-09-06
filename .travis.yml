@@ -17,8 +17,11 @@ install:
 - pip install -r requirements.txt
 script:
 - cd decide
+- cp travis_local_settings.py local_settings.py
 - python ./manage.py test --keepdb
 notifications:
   email: false
-
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: XuZVjcdS2iawCTRIoOWT7VjCAVcxoMPphTazRx9Zp4BSCXPb/Qhq1TcUUOR7sReBQ70fVCKkTQ60MJWCa70PqteKa02MQrs2rauiaNwZEK13iC/zwc9gLad+ACp+wTEY/J3b0tN53UzyjnERL8M3STztLRoTgBlzy0Uwf6dz6sQbquFypiRV6jTLlemUTXgoTR6JGRfFKmEPIdStqpDWShox8iSst+di4fIqhmzukR8cA0U2TUfUAfgKKBa3ehIcL9ikMAGYWW+EqOXkbGoK0ggEmA4Fsf8V/oy6oRje7hUXoZk5zR6STgPdvgohXALhW08pAWaEZKVty9qhIrB5uoqlhFe/h67cVN0/FtnzPbHdsJyKf7F2HUWPAHZlTpBa3x6vb2iMZdb/3J1z18TBLSfLRVoMRhGpdfE4r8LkgXu7/PJLZ1IjPtYYfdB5JwYwjYbWeo876w9iYBbyCeiaRkg40SdxxoAhNc2ahJQ8aFRNzPNsI9KWNmU9T1qG1BnAZSTMz6+NtyZ88cfejung9amTlB5L7uaf5jVtm7AhN9T9jFJw1f8hG0iL66HZdepfYVqsGoquC7sjhT2zJ7m0wZjfE+6bzvxYJyGAKeHujfJx8DhK/RJqpBwVylD+9e4Mfm9mhj2CRvNeO+4kQfIOTwktrJUbto1CiC7j+clLBpI=
